@@ -1,3 +1,4 @@
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ public class PlayerInput : MonoBehaviour
 {
     public float speed = 5.0f;
     Vector3 dir = Vector3.zero;
+
     PlayerInputActions playerInputActions;
     Animator animator;
     CharacterController characterController;
@@ -18,6 +20,7 @@ public class PlayerInput : MonoBehaviour
         playerInputActions = new PlayerInputActions();
         animator = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void OnEnable()
@@ -25,16 +28,12 @@ public class PlayerInput : MonoBehaviour
         playerInputActions.Player.Enable();
         playerInputActions.Player.Move.performed += OnMove;
         playerInputActions.Player.Move.canceled += OnMove;
-        playerInputActions.Player.Look.performed += OnLook;
-        playerInputActions.Player.Look.canceled += OnLook;
         playerInputActions.Player.Attack.performed += OnAttack;
     }
 
     private void OnDisable()
-    { 
+    {
         playerInputActions.Player.Attack.performed -= OnAttack;
-        playerInputActions.Player.Look.canceled -= OnLook;
-        playerInputActions.Player.Look.performed -= OnLook;
         playerInputActions.Player.Move.canceled -= OnMove;
         playerInputActions.Player.Move.performed -= OnMove;
         playerInputActions.Player.Disable();
@@ -48,7 +47,7 @@ public class PlayerInput : MonoBehaviour
 
     private void OnMove(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if (context.performed)
         {
             animator.SetBool("isMove", true);
             Vector3 input = context.ReadValue<Vector2>();
@@ -57,17 +56,11 @@ public class PlayerInput : MonoBehaviour
             animator.SetFloat("inputX", input.x);
             animator.SetFloat("inputY", input.y);
         }
-        else if(context.canceled)
+        else if (context.canceled)
         {
             animator.SetBool("isMove", false);
             dir = Vector3.zero;
         }
-    }
-
-
-    private void OnLook(InputAction.CallbackContext context)
-    {
-        
     }
 
     private void OnAttack(InputAction.CallbackContext context)
