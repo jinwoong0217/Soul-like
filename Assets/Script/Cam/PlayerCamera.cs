@@ -6,13 +6,15 @@ using UnityEngine.InputSystem;
 
 public class PlayerCamera : MonoBehaviour
 {
+    [Header("감도")]
     public float lookSpeedY = 4.0f;
     public float lookSpeedX = 3.0f;
-    public Transform playerBody;
-    private float xRotation = 0f;
 
-    private CinemachineVirtualCamera virtualCamera;
-    private PlayerInputActions playerInputActions;
+    public Transform playerBody;
+    float xRotation = 0f; // 저장용
+
+    CinemachineVirtualCamera virtualCamera;
+    PlayerInputActions playerInputActions;
 
     private void Awake()
     {

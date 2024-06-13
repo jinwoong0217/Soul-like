@@ -7,17 +7,25 @@ using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
+    [Header("이동속도")]
     public float speed = 5.0f;
     public float sprintSpeed = 8.0f;
-    float defaultSpeed;
+    float defaultSpeed;  // 이동속도 저장용
+
+    bool isParrying = false;
+    float maxParryDuration = 3.0f;  // 패링을 유지하는 시간
 
     Vector3 dir = Vector3.zero;
 
+    Coroutine parryCoroutine;
     PlayerInputActions playerInputActions;
     Animator animator;
     CharacterController characterController;
+
     readonly int Attack_Hash = Animator.StringToHash("Attack");
     readonly int Parry_Hash = Animator.StringToHash("Parry");
+    readonly int ParryTrue_Hash = Animator.StringToHash("ParryTrue");
+    readonly int ParryFalse_Hash = Animator.StringToHash("ParryFalse");
     readonly int Sprint_Hash = Animator.StringToHash("Run");
 
     private void Awake()
@@ -36,6 +44,7 @@ public class PlayerInput : MonoBehaviour
         playerInputActions.Player.Move.canceled += OnMove;
         playerInputActions.Player.Attack.performed += OnAttack;
         playerInputActions.Player.Parring.started += OnParry;
+        playerInputActions.Player.Parring.canceled += OnParryFalse;
         playerInputActions.Player.Run.started += OnSprint;
         playerInputActions.Player.Run.canceled += OnSprintCanceled;
     }
@@ -44,6 +53,7 @@ public class PlayerInput : MonoBehaviour
     {
         playerInputActions.Player.Run.canceled -= OnSprintCanceled;
         playerInputActions.Player.Run.started -= OnSprint;
+        playerInputActions.Player.Parring.canceled -= OnParryFalse;
         playerInputActions.Player.Parring.started -= OnParry;
         playerInputActions.Player.Attack.performed -= OnAttack;
         playerInputActions.Player.Move.canceled -= OnMove;
@@ -92,39 +102,82 @@ public class PlayerInput : MonoBehaviour
 
     private void OnParry(InputAction.CallbackContext context)
     {
-        StartCoroutine(ParryCoroutine());
+        if (!isParrying)
+        {
+            isParrying = true;
+            animator.SetTrigger(Parry_Hash);
+            if (parryCoroutine != null)
+            {
+                StopCoroutine(parryCoroutine);
+            }
+            parryCoroutine = StartCoroutine(ParryCoroutine());
+        }
     }
 
-    IEnumerator ParryCoroutine()
+    private void OnParryFalse(InputAction.CallbackContext context)
     {
-        animator.SetTrigger(Parry_Hash);
-        playerInputActions.Disable();
-        yield return new WaitForSeconds(1);
-        if (EnemyAttack())
+        if (isParrying)
         {
-            animator.SetBool("isParry", true);
+            StopParry(false);
+        }
+    }
+
+    private IEnumerator ParryCoroutine()
+    {
+        float startTime = Time.time;
+
+        while (isParrying)
+        {
+            if (Time.time - startTime >= maxParryDuration)
+            {
+                StopParry(false);
+                yield break;
+            }
+
+            if (EnemyAttack())
+            {
+                StopParry(true);
+                yield break;
+            }
+
+            yield return null;
+        }
+    }
+
+    private void StopParry(bool successful)
+    {
+        isParrying = false;
+        if (successful)
+        {
+            animator.SetTrigger(ParryTrue_Hash);
         }
         else
         {
-            animator.SetBool("isParry", false);
+            animator.SetTrigger(ParryFalse_Hash);
         }
-        playerInputActions.Enable();
     }
 
     bool EnemyAttack()
     {
-        return true;
+        return true;  // 임시
     }
 
     private void OnSprint(InputAction.CallbackContext context)
     {
-        animator.SetBool(Sprint_Hash, true);
-        speed = sprintSpeed;
+        if (context.started)
+        {
+            animator.SetTrigger(Sprint_Hash);
+            speed = sprintSpeed;
+        }
     }
 
     private void OnSprintCanceled(InputAction.CallbackContext context)
     {
-        animator.SetBool(Sprint_Hash, false);
-        speed = defaultSpeed;
+        if (context.canceled)
+        {
+            animator.ResetTrigger(Sprint_Hash);
+            animator.SetTrigger("StopRun");
+            speed = defaultSpeed;
+        }
     }
 }
