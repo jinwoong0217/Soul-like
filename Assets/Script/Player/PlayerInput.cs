@@ -11,6 +11,7 @@ public class PlayerInput : MonoBehaviour
     public float speed = 5.0f;
     public float sprintSpeed = 8.0f;
     float defaultSpeed;  // 이동속도 저장용
+    bool isSprinting = false;
 
     bool isParrying = false;
     float maxParryDuration = 3.0f;  // 패링을 유지하는 시간
@@ -26,7 +27,8 @@ public class PlayerInput : MonoBehaviour
     readonly int Parry_Hash = Animator.StringToHash("Parry");
     readonly int ParryTrue_Hash = Animator.StringToHash("ParryTrue");
     readonly int ParryFalse_Hash = Animator.StringToHash("ParryFalse");
-    readonly int Sprint_Hash = Animator.StringToHash("Run");
+    readonly int Run_Hash = Animator.StringToHash("Run");
+    readonly int StopRun_Hash = Animator.StringToHash("StopRun");
 
     private void Awake()
     {
@@ -69,19 +71,60 @@ public class PlayerInput : MonoBehaviour
 
     private void OnMove(InputAction.CallbackContext context)
     {
+        Vector2 input = context.ReadValue<Vector2>();
+        dir = new Vector3(input.x, 0, input.y);
+
         if (context.performed)
         {
             animator.SetBool("isMove", true);
-            Vector3 input = context.ReadValue<Vector2>();
-            dir = new Vector3(input.x, 0, input.y);
-
             animator.SetFloat("inputX", input.x);
             animator.SetFloat("inputY", input.y);
+
+            // 스프린트 상태 체크 및 애니메이션 업데이트
+            if (isSprinting)
+            {
+                animator.SetFloat("sprintInputX", input.x);
+                animator.SetFloat("sprintInputY", input.y);
+                animator.SetTrigger(Run_Hash);
+            }
         }
         else if (context.canceled)
         {
-            animator.SetBool("isMove", false);
             dir = Vector3.zero;
+            animator.SetBool("isMove", false);
+            animator.SetFloat("inputX", 0);
+            animator.SetFloat("inputY", 0);
+
+            // 이동 중지 시 스프린트 상태도 초기화
+            if (isSprinting)
+            {
+                isSprinting = false;
+                speed = defaultSpeed;
+                animator.SetTrigger(StopRun_Hash);
+            }
+        }
+    }
+
+    private void OnSprint(InputAction.CallbackContext context)
+    {
+        if (context.started && dir != Vector3.zero)
+        {
+            isSprinting = true;
+            speed = sprintSpeed;
+            animator.SetTrigger(Run_Hash);
+
+            animator.SetFloat("sprintInputX", dir.x);
+            animator.SetFloat("sprintInputY", dir.z);
+        }
+    }
+
+    private void OnSprintCanceled(InputAction.CallbackContext context)
+    {
+        if (context.canceled)
+        {
+            isSprinting = false;
+            speed = defaultSpeed;
+            animator.SetTrigger(StopRun_Hash);
         }
     }
 
@@ -160,24 +203,5 @@ public class PlayerInput : MonoBehaviour
     bool EnemyAttack()
     {
         return true;  // 임시
-    }
-
-    private void OnSprint(InputAction.CallbackContext context)
-    {
-        if (context.started)
-        {
-            animator.SetTrigger(Sprint_Hash);
-            speed = sprintSpeed;
-        }
-    }
-
-    private void OnSprintCanceled(InputAction.CallbackContext context)
-    {
-        if (context.canceled)
-        {
-            animator.ResetTrigger(Sprint_Hash);
-            animator.SetTrigger("StopRun");
-            speed = defaultSpeed;
-        }
     }
 }
