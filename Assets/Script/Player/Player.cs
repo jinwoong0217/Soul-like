@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float maxHealth = 100.0f;
+    float currentHealth;
+
+    private void Start()
     {
-        
+        currentHealth = maxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(float damage)
     {
-        
+        currentHealth -= damage;
+        Debug.Log($"{currentHealth}");
+        if (currentHealth <= 0)
+        {
+            Debug.Log("Player Dead");
+            
+        }
+    }
+
+    public float GetCurrentHealth()
+    {
+        return currentHealth;
     }
 }

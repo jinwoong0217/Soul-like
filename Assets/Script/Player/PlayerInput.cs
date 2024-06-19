@@ -16,27 +16,30 @@ public class PlayerInput : MonoBehaviour
     bool isParrying = false;
     float maxParryDuration = 3.0f;  // 패링을 유지하는 시간
 
+
     Vector3 dir = Vector3.zero;
 
-    Coroutine parryCoroutine;
-    PlayerInputActions playerInputActions;
+    Player player;
+    ParrySystem parrySystem;
     Animator animator;
+    PlayerInputActions playerInputActions;
     CharacterController characterController;
 
     readonly int Attack_Hash = Animator.StringToHash("Attack");
-    readonly int Parry_Hash = Animator.StringToHash("Parry");
-    readonly int ParryTrue_Hash = Animator.StringToHash("ParryTrue");
-    readonly int ParryFalse_Hash = Animator.StringToHash("ParryFalse");
     readonly int Run_Hash = Animator.StringToHash("Run");
     readonly int StopRun_Hash = Animator.StringToHash("StopRun");
 
     private void Awake()
     {
-        playerInputActions = new PlayerInputActions();
-        animator = GetComponent<Animator>();
-        characterController = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
         defaultSpeed = speed;
+
+        player = GameManager.Instance.Player;
+        animator = GetComponent<Animator>();
+        parrySystem = GetComponent<ParrySystem>();
+        playerInputActions = new PlayerInputActions();
+        characterController = GetComponent<CharacterController>();
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void OnEnable()
@@ -145,63 +148,14 @@ public class PlayerInput : MonoBehaviour
 
     private void OnParry(InputAction.CallbackContext context)
     {
-        if (!isParrying)
-        {
-            isParrying = true;
-            animator.SetTrigger(Parry_Hash);
-            if (parryCoroutine != null)
-            {
-                StopCoroutine(parryCoroutine);
-            }
-            parryCoroutine = StartCoroutine(ParryCoroutine());
-        }
+        parrySystem.StartParry();
     }
 
     private void OnParryFalse(InputAction.CallbackContext context)
     {
-        if (isParrying)
+        if (parrySystem.isParrying)
         {
-            StopParry(false);
+            parrySystem.StopParry(false);
         }
-    }
-
-    private IEnumerator ParryCoroutine()
-    {
-        float startTime = Time.time;
-
-        while (isParrying)
-        {
-            if (Time.time - startTime >= maxParryDuration)
-            {
-                StopParry(false);
-                yield break;
-            }
-
-            if (EnemyAttack())
-            {
-                StopParry(true);
-                yield break;
-            }
-
-            yield return null;
-        }
-    }
-
-    private void StopParry(bool successful)
-    {
-        isParrying = false;
-        if (successful)
-        {
-            animator.SetTrigger(ParryTrue_Hash);
-        }
-        else
-        {
-            animator.SetTrigger(ParryFalse_Hash);
-        }
-    }
-
-    bool EnemyAttack()
-    {
-        return true;  // 임시
     }
 }
