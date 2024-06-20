@@ -11,11 +11,8 @@ public class PlayerInput : MonoBehaviour
     public float speed = 5.0f;
     public float sprintSpeed = 8.0f;
     float defaultSpeed;  // 이동속도 저장용
+
     bool isSprinting = false;
-
-    bool isParrying = false;
-    float maxParryDuration = 3.0f;  // 패링을 유지하는 시간
-
 
     Vector3 dir = Vector3.zero;
 

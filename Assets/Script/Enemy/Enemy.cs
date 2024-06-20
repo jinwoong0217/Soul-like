@@ -14,7 +14,6 @@ public class Enemy : MonoBehaviour
     readonly int ReadyAttack_Hash = Animator.StringToHash("ReadyAttack");  // 배틀페이즈에서 플레이어와 싸울 준비하는 트랜지션
 
     // 이동 속도
-    public float walkSpeed = 2.0f;
     public float chaseSpeed = 5.0f;
 
     // 체력
@@ -37,8 +36,7 @@ public class Enemy : MonoBehaviour
     Action onUpdate = null;
 
     // 타겟
-    Transform chaseTarget = null;
-    Player target = null;
+    Player target;
 
     // 적 상태
     enum EnemyState
@@ -94,19 +92,19 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         target = GameManager.Instance.Player;
+        HP = maxHp;
+
+        onUpdate = UpdateIdle;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        onUpdate?.Invoke();
+        onUpdate();
     }
 
     // Idle 상태 업데이트
     void UpdateIdle()
     {
-        // 기본 애니메이션 상태 유지
-        animator.SetBool("IsIdle", true);
-
         // 플레이어 탐색
         if (FindPlayer())
         {
@@ -117,21 +115,27 @@ public class Enemy : MonoBehaviour
     void UpdateFind()
     {
         // 플레이어를 발견하면 See_Hash 애니메이션 실행
-        animator.SetTrigger(See_Hash);
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Walk"))
+        {
+            animator.SetTrigger(See_Hash);
+        }
 
         // 플레이어를 따라가기 시작
         agent.speed = chaseSpeed;
-        agent.SetDestination(chaseTarget.position);
+        agent.SetDestination(target.transform.position);
 
         // 플레이어와 일정 거리 이내에 도달하면 Chase_Hash 애니메이션 실행
-        float distanceSquared = (transform.position - chaseTarget.position).sqrMagnitude;
+        float distanceSquared = (transform.position - target.transform.position).sqrMagnitude;
         float thresholdDistanceSquared = 5.0f * 5.0f; // 5.0f 거리에 대한 제곱 값
 
         if (distanceSquared < thresholdDistanceSquared)
         {
             // NavMeshAgent를 멈추고 애니메이션만 진행
             agent.isStopped = true;
-            animator.SetTrigger(Chase_Hash);
+            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("battle poze"))
+            {
+                animator.SetTrigger(Chase_Hash);
+            }
             Invoke("TransitionToFight", 1.0f); // 1초 후 Fight 상태로 전환
         }
     }
@@ -139,20 +143,47 @@ public class Enemy : MonoBehaviour
     // Fight 상태 업데이트
     void UpdateFight()
     {
-        // ReadyAttack_Hash 애니메이션 실행
-        animator.SetTrigger(ReadyAttack_Hash);
+        // 타겟과의 거리 계산
+        float distanceToTarget = (target.transform.position - transform.position).sqrMagnitude;
+        float skillDistanceThreshold = 2f * 2f; // sqrMagnitude를 사용하므로 2f의 제곱값 사용
+
+        // ReadyAttack 애니메이션이 실행 중인지 확인
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        bool isReadyAttack = stateInfo.IsName("ReadyAttack");
+
+        if (isReadyAttack && distanceToTarget <= skillDistanceThreshold)
+        {
+            // 스킬 사용 타이머가 0 이하일 때 스킬 사용
+            if (attackElapsed <= 0)
+            {
+                int skillIndex = UnityEngine.Random.Range(0, 4); // 0, 1, 2, 3 중 하나 선택
+                animator.SetFloat("SkillTree", skillIndex);
+                animator.SetTrigger(OnSkill_Hash);
+                attackElapsed = 3.0f; // 3초 후 다시 스킬 사용 가능
+
+                // 스킬을 사용할 때 이동 멈춤
+                agent.isStopped = true;
+            }
+        }
+        else if (!isReadyAttack)
+        {
+            // ReadyAttack 애니메이션이 실행 중이 아니면 ReadyAttack 트리거 설정
+            animator.SetTrigger(ReadyAttack_Hash);
+        }
+
+        // 스킬 사용 후 ReadyAttack 상태로 돌아감
+        if (stateInfo.IsName("Skill") && stateInfo.normalizedTime >= 1.0f)
+        {
+            animator.SetTrigger(ReadyAttack_Hash); // ReadyAttack 상태로 전환
+            agent.isStopped = false; // 이동 재개
+        }
 
         // 플레이어를 계속 따라감
-        agent.SetDestination(chaseTarget.position);
-
-        // 랜덤 스킬 사용
-        if (attackElapsed <= 0)
+        if (!agent.isStopped)
         {
-            int skillIndex = UnityEngine.Random.Range(0, 4); // 0, 1, 2, 3 중 하나 선택
-            animator.SetInteger(SkillTree, skillIndex);
-            animator.SetTrigger(OnSkill_Hash);
-            attackElapsed = 3.0f; // 3초 후 다시 스킬 사용 가능
+            agent.SetDestination(target.transform.position);
         }
+
         attackElapsed -= Time.deltaTime;
     }
 
@@ -167,16 +198,15 @@ public class Enemy : MonoBehaviour
     // 플레이어 탐색 함수
     bool FindPlayer()
     {
-        // 시야 범위 내에 플레이어가 있는지 확인
-        Collider[] hits = Physics.OverlapSphere(transform.position, sightRange);
+        Collider[] hits = Physics.OverlapSphere(transform.position, sightRange, LayerMask.GetMask("Player"));
         foreach (var hit in hits)
         {
-            if (hit.CompareTag("Player"))
+            if (hit.CompareTag("Player") && !hit.isTrigger)
             {
                 Vector3 direction = (hit.transform.position - transform.position).normalized;
                 if (Vector3.Angle(transform.forward, direction) < sightAngle / 2)
                 {
-                    chaseTarget = hit.transform;
+                    target.transform.position = hit.transform.position;
                     return true;
                 }
             }
@@ -189,7 +219,10 @@ public class Enemy : MonoBehaviour
     {
         // NavMeshAgent를 다시 시작
         agent.isStopped = false;
+        animator.SetTrigger(ReadyAttack_Hash); // ReadyAttack_Hash 트리거 설정
         State = EnemyState.Fight;
     }
+
+
 }
 
