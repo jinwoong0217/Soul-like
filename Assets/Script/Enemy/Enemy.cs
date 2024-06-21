@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.AI;
 using System;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour , IDamage
 {
     // 애니메이터 해시 값
     readonly int SkillTree = Animator.StringToHash("SkillTree"); // 블렌드 트리 Float
@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     public float chaseSpeed = 5.0f;
 
     // 체력
-    float hp = 100.0f;
+    public float hp = 100.0f;
     float maxHp = 100.0f;
 
     // 시야 설정
@@ -201,5 +201,9 @@ public class Enemy : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    public void TakeDamage(float amount)
+    {
+        
+    }
 }
 

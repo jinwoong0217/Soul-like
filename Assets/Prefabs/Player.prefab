@@ -76,6 +76,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4504118475779270294}
   - component: {fileID: 6725218557317755474}
+  - component: {fileID: 1925406981562561071}
   m_Layer: 3
   m_Name: Paladin_J_Nordstrom
   m_TagString: PlayerSword
@@ -91,13 +92,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910817528945968536}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.12169605, z: -0, w: 0.9925674}
-  m_LocalPosition: {x: 0.74, y: 1.4139999, z: -0.0050001144}
+  m_LocalRotation: {x: -0.00012341142, y: 0.12169649, z: -0.00005427003, w: 0.9925674}
+  m_LocalPosition: {x: 0.004755411, y: -0.0039444217, z: 0.053170446}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3278852107797879352}
-  m_Father: {fileID: 3137725741290532720}
+  m_Children: []
+  m_Father: {fileID: 1496847659667785467}
   m_LocalEulerAnglesHint: {x: 0, y: 13.98, z: 0}
 --- !u!137 &6725218557317755474
 SkinnedMeshRenderer:
@@ -221,6 +221,27 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.79662716, y: 0.45543876, z: 0.2404747}
     m_Extent: {x: 0.15018606, y: 0.04597959, z: 0.507103}
   m_DirtyAABB: 0
+--- !u!65 &1925406981562561071
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910817528945968536}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.08, y: 0.091959715, z: 1.0567302}
+  m_Center: {x: -0.005893469, y: -0.0027744472, z: 0.2566568}
 --- !u!1 &928327173823706839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,7 +1444,8 @@ Transform:
   m_LocalPosition: {x: 0.007702401, y: 0.07959965, z: 0.02820829}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4504118475779270294}
   m_Father: {fileID: 8751430283319851866}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4384249108073721543
@@ -1778,7 +1800,6 @@ Transform:
   - {fileID: 3096852324750640487}
   - {fileID: 8585573345176977187}
   - {fileID: 6089269746169502238}
-  - {fileID: 4504118475779270294}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3144563030087658272
@@ -1865,6 +1886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   sprintSpeed: 8
+  canMove: 1
 --- !u!114 &4175857138755471748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2146,7 +2168,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3096852324750640487}
   - component: {fileID: 7877789179459588311}
-  - component: {fileID: 6013962657835629230}
   m_Layer: 3
   m_Name: Paladin_J_Nordstrom_Helmet
   m_TagString: Shield
@@ -2291,27 +2312,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.57295895, y: 0.5037055, z: -0.112588495}
     m_Extent: {x: 0.22419465, y: 0.06168276, z: 0.33789957}
   m_DirtyAABB: 0
---- !u!65 &6013962657835629230
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6468521770522558399}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.44838947, y: 0.12336617, z: 0.67579913}
-  m_Center: {x: -0.57330114, y: 1.4594941, z: -0.10758505}
 --- !u!1 &6595362600921441156
 GameObject:
   m_ObjectHideFlags: 0
@@ -2406,61 +2406,6 @@ Transform:
   - {fileID: 8136134189502710727}
   m_Father: {fileID: 7044622194627387711}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7221827892610521331
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3278852107797879352}
-  - component: {fileID: 7681192497293463110}
-  m_Layer: 3
-  m_Name: Sword
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3278852107797879352
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7221827892610521331}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4504118475779270294}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &7681192497293463110
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7221827892610521331}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7322223400584602139
 GameObject:
   m_ObjectHideFlags: 0

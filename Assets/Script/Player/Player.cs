@@ -2,29 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour , IDamage
 {
-    public float maxHealth = 100.0f;
-    float currentHealth;
+    public float health = 100f;
 
-    private void Start()
+    public void TakeDamage(float amount)
     {
-        currentHealth = maxHealth;
-    }
-
-    public void TakeDamage(float damage)
-    {
-        currentHealth -= damage;
-        Debug.Log($"{currentHealth}");
-        if (currentHealth <= 0)
+        health -= amount;
+        if (health <= 0)
         {
-            Debug.Log("Player Dead");
-            
+            Die();
         }
     }
 
-    public float GetCurrentHealth()
+    private void Die()
     {
-        return currentHealth;
+        // 플레이어 사망 처리
     }
+
 }

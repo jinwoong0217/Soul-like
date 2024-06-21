@@ -80,26 +80,31 @@ public class PlayerInput : MonoBehaviour
 
         if (context.performed && canMove)
         {
-            animator.SetBool("isMove", true);
-            animator.SetFloat("inputX", input.x);
-            animator.SetFloat("inputY", input.y);
-
-            // 스프린트 상태 체크 및 애니메이션 업데이트
-            if (isSprinting)
+            if (input != Vector2.zero)
             {
-                animator.SetFloat("sprintInputX", input.x);
-                animator.SetFloat("sprintInputY", input.y);
-                animator.SetTrigger(Run_Hash);
+                animator.SetBool("isMove", true);
+                animator.SetFloat("inputX", input.x);
+                animator.SetFloat("inputY", input.y);
+
+                if (isSprinting)
+                {
+                    animator.SetFloat("sprintInputX", input.x);
+                    animator.SetFloat("sprintInputY", input.y);
+                    animator.SetTrigger(Run_Hash);
+                }
+            }
+            else
+            {
+                animator.SetBool("isMove", false);
             }
         }
-        else if (context.canceled && !canMove)
+        else if (context.canceled)
         {
             dir = Vector3.zero;
             animator.SetBool("isMove", false);
             animator.SetFloat("inputX", 0);
             animator.SetFloat("inputY", 0);
 
-            // 이동 중지 시 스프린트 상태도 초기화
             if (isSprinting)
             {
                 isSprinting = false;
@@ -134,27 +139,35 @@ public class PlayerInput : MonoBehaviour
 
     private void OnAttack(InputAction.CallbackContext context)
     {
-        StartCoroutine(AttackCoroutine());
+        if (canMove) 
+        {
+            StartCoroutine(AttackCoroutine());
+        }
     }
 
     IEnumerator AttackCoroutine()
     {
+        canMove = false; 
         animator.SetBool("isMove", false);
         animator.SetTrigger(Attack_Hash);
         playerInputActions.Disable();
 
         yield return new WaitForSeconds(1f);
         playerInputActions.Enable();
+        canMove = true; 
     }
 
     private void OnParry(InputAction.CallbackContext context)
     {
-        parrySystem.StartParry();
-        canMove = false;
-        dir = Vector3.zero; 
-        animator.SetBool("isMove", false); 
-        animator.SetFloat("inputX", 0);
-        animator.SetFloat("inputY", 0);
+        if (canMove) 
+        {
+            parrySystem.StartParry();
+            canMove = false;
+            dir = Vector3.zero;
+            animator.SetBool("isMove", false);
+            animator.SetFloat("inputX", 0);
+            animator.SetFloat("inputY", 0);
+        }
     }
 
     private void OnParryCanceled(InputAction.CallbackContext context)
@@ -165,5 +178,6 @@ public class PlayerInput : MonoBehaviour
             canMove = true;
         }
     }
+
 
 }
