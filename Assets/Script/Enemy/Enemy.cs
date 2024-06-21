@@ -144,6 +144,7 @@ public class Enemy : MonoBehaviour
     }
 
     // Fight 상태 업데이트
+    // Fight 상태 업데이트
     void UpdateFight()
     {
         if (Vector3.SqrMagnitude(target.transform.position - transform.position) > 2f * 2f)
@@ -153,8 +154,12 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            animator.SetBool(OnSkill_Hash, true);
-            animator.SetFloat(SkillTree, UnityEngine.Random.Range(0, 4));
+            if (animator.GetBool(OnSkill_Hash) == false)
+            {
+                // OnSkill_Hash가 false에서 true로 변경될 때만 SkillTree 값을 설정
+                animator.SetBool(OnSkill_Hash, true);
+                animator.SetFloat(SkillTree, UnityEngine.Random.Range(0, 4));
+            }
             agent.isStopped = true;
         }
 
@@ -171,6 +176,7 @@ public class Enemy : MonoBehaviour
             }
         }
     }
+
 
     /// <summary>
     /// 스킬사용이 끝났는지 체크하는 함수

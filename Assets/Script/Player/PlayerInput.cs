@@ -13,6 +13,7 @@ public class PlayerInput : MonoBehaviour
     float defaultSpeed;  // 이동속도 저장용
 
     bool isSprinting = false;
+    public bool canMove = true;
 
     Vector3 dir = Vector3.zero;
 
@@ -46,7 +47,7 @@ public class PlayerInput : MonoBehaviour
         playerInputActions.Player.Move.canceled += OnMove;
         playerInputActions.Player.Attack.performed += OnAttack;
         playerInputActions.Player.Parring.started += OnParry;
-        playerInputActions.Player.Parring.canceled += OnParryFalse;
+        playerInputActions.Player.Parring.canceled += OnParryCanceled;
         playerInputActions.Player.Run.started += OnSprint;
         playerInputActions.Player.Run.canceled += OnSprintCanceled;
     }
@@ -55,7 +56,7 @@ public class PlayerInput : MonoBehaviour
     {
         playerInputActions.Player.Run.canceled -= OnSprintCanceled;
         playerInputActions.Player.Run.started -= OnSprint;
-        playerInputActions.Player.Parring.canceled -= OnParryFalse;
+        playerInputActions.Player.Parring.canceled -= OnParryCanceled;
         playerInputActions.Player.Parring.started -= OnParry;
         playerInputActions.Player.Attack.performed -= OnAttack;
         playerInputActions.Player.Move.canceled -= OnMove;
@@ -65,8 +66,11 @@ public class PlayerInput : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 move = transform.TransformDirection(dir);
-        characterController.Move(Time.deltaTime * move * speed);
+        if (canMove)
+        {
+            Vector3 move = transform.TransformDirection(dir);
+            characterController.Move(Time.deltaTime * move * speed);
+        }
     }
 
     private void OnMove(InputAction.CallbackContext context)
@@ -74,7 +78,7 @@ public class PlayerInput : MonoBehaviour
         Vector2 input = context.ReadValue<Vector2>();
         dir = new Vector3(input.x, 0, input.y);
 
-        if (context.performed)
+        if (context.performed && canMove)
         {
             animator.SetBool("isMove", true);
             animator.SetFloat("inputX", input.x);
@@ -88,7 +92,7 @@ public class PlayerInput : MonoBehaviour
                 animator.SetTrigger(Run_Hash);
             }
         }
-        else if (context.canceled)
+        else if (context.canceled && !canMove)
         {
             dir = Vector3.zero;
             animator.SetBool("isMove", false);
@@ -146,13 +150,20 @@ public class PlayerInput : MonoBehaviour
     private void OnParry(InputAction.CallbackContext context)
     {
         parrySystem.StartParry();
+        canMove = false;
+        dir = Vector3.zero; 
+        animator.SetBool("isMove", false); 
+        animator.SetFloat("inputX", 0);
+        animator.SetFloat("inputY", 0);
     }
 
-    private void OnParryFalse(InputAction.CallbackContext context)
+    private void OnParryCanceled(InputAction.CallbackContext context)
     {
         if (parrySystem.isParrying)
         {
             parrySystem.StopParry(false);
+            canMove = true;
         }
     }
+
 }
