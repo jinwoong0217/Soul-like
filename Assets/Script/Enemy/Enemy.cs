@@ -144,7 +144,6 @@ public class Enemy : MonoBehaviour , IDamage
     }
 
     // Fight 상태 업데이트
-    // Fight 상태 업데이트
     void UpdateFight()
     {
         if (Vector3.SqrMagnitude(target.transform.position - transform.position) > 2f * 2f)
@@ -203,7 +202,17 @@ public class Enemy : MonoBehaviour , IDamage
 
     public void TakeDamage(float amount)
     {
-        
+        HP -= amount;
+        Debug.Log($"{amount}");
+
+        if (HP <= 0)
+        {
+            State = EnemyState.Dead;
+        }
+        else
+        {
+            animator.SetTrigger("GetHit"); 
+        }
     }
 }
 
