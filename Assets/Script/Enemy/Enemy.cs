@@ -7,11 +7,11 @@ using System;
 public class Enemy : MonoBehaviour
 {
     // 애니메이터 해시 값
-    readonly int SkillTree = Animator.StringToHash("SkillTree"); // 블렌드 트리 
-    readonly int OnSkill_Hash = Animator.StringToHash("OnSkill"); // 스킬을 쓸 수 있는 트랜지션
-    readonly int See_Hash = Animator.StringToHash("See");  // 플레이어를 찾고 실행될 트랜지션
-    readonly int Chase_Hash = Animator.StringToHash("Chase");  // 플레이어와 일정 거리 닿는 순간 배틀페이즈로 바뀌는 트랜지션
-    readonly int ReadyAttack_Hash = Animator.StringToHash("ReadyAttack");  // 배틀페이즈에서 플레이어와 싸울 준비하는 트랜지션
+    readonly int SkillTree = Animator.StringToHash("SkillTree"); // 블렌드 트리 Float
+    readonly int OnSkill_Hash = Animator.StringToHash("OnSkill"); // 스킬을 쓸 수 있는 트랜지션Bool
+    readonly int See_Hash = Animator.StringToHash("See");  // 플레이어를 찾고 플레이어한테 걸어가는 Trigger 트랜지션
+    readonly int Chase_Hash = Animator.StringToHash("Chase");  // 플레이어와 일정 거리 닿는 순간 배틀포즈 애니메이이션으로 바뀌는 Trigger트랜지션
+    readonly int ReadyAttack_Hash = Animator.StringToHash("ReadyAttack");  // 배틀포즈에서 플레이어와 싸울 준비하는 Trigger트랜지션
 
     // 이동 속도
     public float chaseSpeed = 5.0f;
@@ -22,10 +22,6 @@ public class Enemy : MonoBehaviour
 
     // 시야 설정
     public float sightAngle = 90.0f;
-    public float sightRange = 20.0f;
-
-    // 공격 대기 시간
-    float attackElapsed = 0;
 
     // 컴포넌트
     Animator animator;
@@ -33,7 +29,7 @@ public class Enemy : MonoBehaviour
 
     // 이벤트 및 콜백
     public Action<Enemy> onDie;
-    Action onUpdate = null;
+    Action onUpdate;
 
     // 타겟
     Player target;
@@ -105,124 +101,99 @@ public class Enemy : MonoBehaviour
     // Idle 상태 업데이트
     void UpdateIdle()
     {
-        // 플레이어 탐색
-        if (FindPlayer())
+        if(FindPlayer())
         {
             State = EnemyState.Find;
-        }
+        }    
     }
 
+    /// <summary>
+    /// 타겟을 찾는 함수
+    /// </summary>
+    /// <returns>시야각에 들어오면 true 아니면 false</returns>
+    bool FindPlayer()
+    {
+        Vector3 findPlayer = (target.transform.position - transform.position).normalized;
+        float insightPlayer = Vector3.Angle(transform.forward, findPlayer);
+
+        if(insightPlayer < sightAngle)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    // Find상태 업데이트
     void UpdateFind()
     {
-        // 플레이어를 발견하면 See_Hash 애니메이션 실행
-        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Walk"))
+       if(FindPlayer())
         {
             animator.SetTrigger(See_Hash);
-        }
-
-        // 플레이어를 따라가기 시작
-        agent.speed = chaseSpeed;
-        agent.SetDestination(target.transform.position);
-
-        // 플레이어와 일정 거리 이내에 도달하면 Chase_Hash 애니메이션 실행
-        float distanceSquared = (transform.position - target.transform.position).sqrMagnitude;
-        float thresholdDistanceSquared = 5.0f * 5.0f; // 5.0f 거리에 대한 제곱 값
-
-        if (distanceSquared < thresholdDistanceSquared)
-        {
-            // NavMeshAgent를 멈추고 애니메이션만 진행
-            agent.isStopped = true;
-            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("battle poze"))
+            agent.SetDestination(target.transform.position);
+            agent.speed = chaseSpeed;
+            if(Vector3.SqrMagnitude(target.transform.position - transform.position) <= 5f * 5f)
             {
                 animator.SetTrigger(Chase_Hash);
+                State = EnemyState.Fight;
             }
-            Invoke("TransitionToFight", 1.0f); // 1초 후 Fight 상태로 전환
+        }
+        else
+        {
+            State = EnemyState.Idle;
         }
     }
 
     // Fight 상태 업데이트
     void UpdateFight()
     {
-        // 타겟과의 거리 계산
-        float distanceToTarget = (target.transform.position - transform.position).sqrMagnitude;
-        float skillDistanceThreshold = 2f * 2f; // sqrMagnitude를 사용하므로 2f의 제곱값 사용
-
-        // ReadyAttack 애니메이션이 실행 중인지 확인
-        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-        bool isReadyAttack = stateInfo.IsName("ReadyAttack");
-
-        if (isReadyAttack && distanceToTarget <= skillDistanceThreshold)
+        if (Vector3.SqrMagnitude(target.transform.position - transform.position) > 2f * 2f)
         {
-            // 스킬 사용 타이머가 0 이하일 때 스킬 사용
-            if (attackElapsed <= 0)
-            {
-                int skillIndex = UnityEngine.Random.Range(0, 4); // 0, 1, 2, 3 중 하나 선택
-                animator.SetFloat("SkillTree", skillIndex);
-                animator.SetTrigger(OnSkill_Hash);
-                attackElapsed = 3.0f; // 3초 후 다시 스킬 사용 가능
-
-                // 스킬을 사용할 때 이동 멈춤
-                agent.isStopped = true;
-            }
-        }
-        else if (!isReadyAttack)
-        {
-            // ReadyAttack 애니메이션이 실행 중이 아니면 ReadyAttack 트리거 설정
             animator.SetTrigger(ReadyAttack_Hash);
-        }
-
-        // 스킬 사용 후 ReadyAttack 상태로 돌아감
-        if (stateInfo.IsName("Skill") && stateInfo.normalizedTime >= 1.0f)
-        {
-            animator.SetTrigger(ReadyAttack_Hash); // ReadyAttack 상태로 전환
-            agent.isStopped = false; // 이동 재개
-        }
-
-        // 플레이어를 계속 따라감
-        if (!agent.isStopped)
-        {
             agent.SetDestination(target.transform.position);
         }
+        else
+        {
+            animator.SetBool(OnSkill_Hash, true);
+            animator.SetFloat(SkillTree, UnityEngine.Random.Range(0, 4));
+            agent.isStopped = true;
+        }
 
-        attackElapsed -= Time.deltaTime;
+        if (animator.GetBool(OnSkill_Hash) == false)
+        {
+            agent.isStopped = false;
+            State = EnemyState.Find;
+        }
+        else
+        {
+            if (SkillUseFinished())
+            {
+                animator.SetBool(OnSkill_Hash, false);
+            }
+        }
+    }
+
+    /// <summary>
+    /// 스킬사용이 끝났는지 체크하는 함수
+    /// </summary>
+    /// <returns>끝났으면 true 아니면 false</returns>
+    bool SkillUseFinished()
+    {
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+        if (stateInfo.IsName("Skill Blend Tree") && stateInfo.normalizedTime >= 1.0f)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     // Dead 상태 업데이트
     void UpdateDead()
     {
-        // 죽었을 때 처리
         onDie?.Invoke(this);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
-
-    // 플레이어 탐색 함수
-    bool FindPlayer()
-    {
-        Collider[] hits = Physics.OverlapSphere(transform.position, sightRange, LayerMask.GetMask("Player"));
-        foreach (var hit in hits)
-        {
-            if (hit.CompareTag("Player") && !hit.isTrigger)
-            {
-                Vector3 direction = (hit.transform.position - transform.position).normalized;
-                if (Vector3.Angle(transform.forward, direction) < sightAngle / 2)
-                {
-                    target.transform.position = hit.transform.position;
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    // Fight 상태로 전환하는 함수
-    void TransitionToFight()
-    {
-        // NavMeshAgent를 다시 시작
-        agent.isStopped = false;
-        animator.SetTrigger(ReadyAttack_Hash); // ReadyAttack_Hash 트리거 설정
-        State = EnemyState.Fight;
-    }
-
 
 }
 
