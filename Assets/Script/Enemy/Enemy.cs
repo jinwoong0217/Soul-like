@@ -23,6 +23,10 @@ public class Enemy : MonoBehaviour , IDamage
     // 시야 설정
     public float sightAngle = 90.0f;
 
+
+    float attackDamage = 3;
+
+
     // 컴포넌트
     Animator animator;
     NavMeshAgent agent;
@@ -30,6 +34,7 @@ public class Enemy : MonoBehaviour , IDamage
     // 이벤트 및 콜백
     public Action<Enemy> onDie;
     Action onUpdate;
+    public Action onAttack;  // 적이 스킬을 쓴다는 걸 알리는 델리게이트(플레이어와의 패링)
 
     // 타겟
     Player target;
@@ -94,6 +99,7 @@ public class Enemy : MonoBehaviour , IDamage
         HP = maxHp;
 
         onUpdate = UpdateIdle;
+        onAttack += CheckParry;
     }
 
     private void FixedUpdate()
@@ -161,6 +167,7 @@ public class Enemy : MonoBehaviour , IDamage
                 // OnSkill_Hash가 false에서 true로 변경될 때만 SkillTree 값을 설정
                 animator.SetBool(OnSkill_Hash, true);
                 animator.SetFloat(SkillTree, UnityEngine.Random.Range(0, 4));
+                onAttack.Invoke();
             }
             agent.isStopped = true;
         }
@@ -229,6 +236,15 @@ public class Enemy : MonoBehaviour , IDamage
     private void Die()
     {
         State = EnemyState.Dead;
+    }
+
+    private void CheckParry()
+    {
+        bool parrySuccess = GameManager.Instance.Player.GetComponent<ParrySystem>().HandleEnemyAttack(attackDamage);
+        if (parrySuccess)
+        {
+            animator.SetTrigger("GetParry");
+        }
     }
 }
 

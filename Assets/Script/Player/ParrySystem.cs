@@ -67,16 +67,19 @@ public class ParrySystem : MonoBehaviour
         }
     }
 
-    public void HandleEnemyAttack(float damage)
+    public bool HandleEnemyAttack(float damage)
     {
         if (isParrying)
         {
             StopParry(true);
+            return true;
         }
         else
         {
             player.TakeDamage(damage);
+            return false;
         }
     }
+
 }
 
