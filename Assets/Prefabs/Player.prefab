@@ -241,7 +241,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.08, y: 0.091959715, z: 1.0567302}
+  m_Size: {x: 0.18, y: 0.091959715, z: 1.0567302}
   m_Center: {x: -0.005893469, y: -0.0027744472, z: 0.2566568}
 --- !u!114 &8655116871689452922
 MonoBehaviour:
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e687f9aff5ecd4e9d86d539cc9d7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damaged: 10
+  damaged: 5
 --- !u!1 &928327173823706839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,7 +1913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8941772e488bf7c4ba288e18e13ac478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  hp: 100
 --- !u!114 &2987598916918211822
 MonoBehaviour:
   m_ObjectHideFlags: 0

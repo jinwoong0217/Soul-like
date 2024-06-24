@@ -34,6 +34,9 @@ public class Enemy : MonoBehaviour , IDamage
     // 타겟
     Player target;
 
+    bool isInvincible = false;
+    float invincibilityDuration = 1.0f; // 무적 시간
+
     // 적 상태
     enum EnemyState
     {
@@ -202,16 +205,31 @@ public class Enemy : MonoBehaviour , IDamage
 
     public void TakeDamage(float amount)
     {
+        if (isInvincible) return;
+
+        StartCoroutine(HandleDamage(amount));
+    }
+
+    private IEnumerator HandleDamage(float amount)
+    {
+        isInvincible = true;
         HP -= amount;
+        animator.SetTrigger("GetHit");
+        Debug.Log($"Enemy HP {HP}");
 
         if (HP <= 0)
         {
-            State = EnemyState.Dead;
+            Die();
         }
-        else
-        {
-            animator.SetTrigger("GetHit"); 
-        }
+
+        // 무적 시간 동안 대기
+        yield return new WaitForSeconds(invincibilityDuration);
+        isInvincible = false;
+    }
+
+    private void Die()
+    {
+        // 적 사망 처리
     }
 }
 
