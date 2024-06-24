@@ -214,7 +214,6 @@ public class Enemy : MonoBehaviour , IDamage
     {
         isInvincible = true;
         HP -= amount;
-        animator.SetTrigger("GetHit");
         Debug.Log($"Enemy HP {HP}");
 
         if (HP <= 0)
@@ -229,7 +228,7 @@ public class Enemy : MonoBehaviour , IDamage
 
     private void Die()
     {
-        // 적 사망 처리
+        State = EnemyState.Dead;
     }
 }
 
