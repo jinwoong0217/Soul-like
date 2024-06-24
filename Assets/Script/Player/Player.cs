@@ -9,6 +9,7 @@ public class Player : MonoBehaviour , IDamage
     public void TakeDamage(float amount)
     {
         health -= amount;
+        Debug.Log($"Player HP -{amount}");
         if (health <= 0)
         {
             Die();

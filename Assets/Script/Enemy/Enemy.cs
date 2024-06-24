@@ -203,7 +203,6 @@ public class Enemy : MonoBehaviour , IDamage
     public void TakeDamage(float amount)
     {
         HP -= amount;
-        Debug.Log($"{amount}");
 
         if (HP <= 0)
         {

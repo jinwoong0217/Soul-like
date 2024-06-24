@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8593355058374181204}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: shield3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2946356449670042966}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3827704020534744450}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: bag_right2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8200253143302260678}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 175409591571960447}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2728146282508936912}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4429866166882434726}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: flap_under_the_knee_left2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6770909335380750145}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4835194500867485597}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6376657726597478166}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5996244027422054506}
   - component: {fileID: 5409884264225970568}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: body8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534,7 +534,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4912889287174815514}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -565,7 +565,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6171211051437519244}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,7 +597,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6131406053529750708}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -629,7 +629,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2799986053634857183}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -661,7 +661,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5286839234522267944}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandThumbEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,7 +692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1005267340393934015}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -724,7 +724,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 794285316616183557}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -756,7 +756,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6680320103430924708}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -787,7 +787,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 975159761037640907}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -819,7 +819,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6222838002075210522}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: shield2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -850,7 +850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4618931575259752479}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -882,7 +882,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5489001479936982425}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -914,7 +914,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1416035952712874009}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -947,7 +947,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3405928019005014919}
   - component: {fileID: 3911604107367310034}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: body7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1156,7 +1156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1413114082063427528}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftAnkleEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1187,7 +1187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3485196495811024301}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1219,7 +1219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5096922475335138875}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: toga_mid_back3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1251,7 +1251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1019730574661806483}
   - component: {fileID: 8616876801268932043}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: weapon3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1460,7 +1460,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3405185213593917671}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1503,7 +1503,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3565025001042114839}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1535,7 +1535,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5545140958132821709}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: heel_flap_right2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1566,7 +1566,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9156229902724157761}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ball_on_a_club3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1597,7 +1597,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5934739618866374058}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1629,7 +1629,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1380247952648493951}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: chain4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1662,7 +1662,7 @@ GameObject:
   m_Component:
   - component: {fileID: 332040798829330241}
   - component: {fileID: 793938393244029831}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: body1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1871,7 +1871,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1284862462429491187}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: hip_flap_right1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1903,7 +1903,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3603191063399342504}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: bag_front1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1936,7 +1936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5222859012123180300}
   - component: {fileID: 8165830658228455577}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: weapon2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2146,7 +2146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8260857711545820696}
   - component: {fileID: 4025797740044144042}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: body3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2355,7 +2355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2545932779935841895}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2387,7 +2387,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4729506744752916973}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: chain11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2419,7 +2419,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5625298716721343390}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2450,7 +2450,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7814705479540621529}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: chain7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2482,7 +2482,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 697317253132504092}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2514,7 +2514,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7386685182545181408}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandIndexEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2545,7 +2545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5277089834082731151}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2577,7 +2577,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7595250271296851173}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2609,7 +2609,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5073581869021127698}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: heel_flap_left2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2641,7 +2641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5729221529553430617}
   - component: {fileID: 3926977442149359361}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: weapon6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2850,7 +2850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4125169210396584178}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightAnkleEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2881,7 +2881,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3086028018263272753}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightElbowEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2912,7 +2912,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1180927611503008807}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: chain12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2944,7 +2944,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9154593955082542998}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftFootEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2975,7 +2975,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5518823817582295301}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: toga_left_back1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3007,7 +3007,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9107094687913058864}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightWristEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3039,7 +3039,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7797511392104291430}
   - component: {fileID: 61310693577918643}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: body14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3248,7 +3248,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3958275441808626966}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3281,7 +3281,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8095661479216461292}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3313,7 +3313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3096016085528661505}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: flap_under_the_knee_left1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3345,7 +3345,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2620331327399406569}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: chain10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3377,7 +3377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2102789927800356655}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3409,7 +3409,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 793026080880323050}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3440,7 +3440,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6221477185546215673}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3474,7 +3474,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3418463534551969227}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: chain5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3506,7 +3506,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2649987797357509175}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3538,7 +3538,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7893638444800047986}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightFootEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3569,7 +3569,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6466800282341561911}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: hip_flap_left1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3601,7 +3601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7099163611400623208}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: toga_left_front1_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3633,7 +3633,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1628033981260973616}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_ChestOriginEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3664,7 +3664,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1087810919681247162}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3697,7 +3697,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9064370801271880873}
   - component: {fileID: 5217819901687548696}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: body6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3906,7 +3906,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7298054648321418499}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftKneeEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3937,7 +3937,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5282098667078616022}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3968,7 +3968,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1689754344493986010}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4000,7 +4000,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3625398649101578756}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: toga_mid_front3_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4031,7 +4031,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2711218114820140575}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: toga_left_front1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4063,7 +4063,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5532141496687338326}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftElbowEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4094,7 +4094,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3925450018029068841}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4128,7 +4128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2351555874617929698}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4162,7 +4162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6877319674309069302}
   - component: {fileID: 6225443042366164533}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: weapon7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4371,7 +4371,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5374834587683653606}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4403,7 +4403,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1377921420257730385}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4435,7 +4435,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7260329570741846277}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandMiddleEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4466,7 +4466,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3187353622518550123}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4498,7 +4498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1762215527282468884}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4529,7 +4529,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8736287444389118273}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4560,7 +4560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 860382229639398175}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4594,7 +4594,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8785078935397299767}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4626,7 +4626,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7066392776210227934}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4658,7 +4658,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8539302749824164017}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4691,7 +4691,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1986275811834275439}
   - component: {fileID: 2426851597766678738}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: weapon1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4900,7 +4900,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2851955510490535619}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4931,7 +4931,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8639204482263326415}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: toga_left_back3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4962,7 +4962,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3143093728416446334}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4994,7 +4994,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9176800984327710044}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5026,7 +5026,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9085733279969656355}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5057,7 +5057,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 298004070609133409}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5093,7 +5093,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4283113859510842055}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5125,7 +5125,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3982960551835661799}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5157,7 +5157,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6895119886247348503}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: knee_pad_right2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5188,7 +5188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2340645399058048785}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_HipsEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5219,7 +5219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4915175388330075579}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandRingEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5251,7 +5251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7626094753070118446}
   - component: {fileID: 1482540272740322894}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: body9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5461,7 +5461,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7296447946311734759}
   - component: {fileID: 2755550867096793620}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: body10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5670,7 +5670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5373161349393169088}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5701,7 +5701,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5546589106380831265}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: hip_flap_left2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5732,7 +5732,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7160491031178313821}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5764,7 +5764,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3740615857448645478}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: toga_right_back1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5797,7 +5797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3798822805473843724}
   - component: {fileID: 524234775901672806}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: body16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6006,7 +6006,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7975639320096753332}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6043,7 +6043,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4870103640733644557}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: toga_mid_front3_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6075,7 +6075,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8173970574374465184}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6108,7 +6108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1463883025618272915}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: flap_under_the_knee_right2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6139,7 +6139,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 696544529893581736}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6171,7 +6171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1409248892329878586}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6202,7 +6202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5145022709934296076}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: shield1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6236,7 +6236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4584592962201727026}
   - component: {fileID: 7729914939368406731}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: body17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6445,7 +6445,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6405628890256293094}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_rightArm_shoulder2_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6477,7 +6477,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6487993843324281607}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandMiddleEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6508,7 +6508,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4284802750951436105}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6540,7 +6540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5458873578999463827}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandThumbEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6571,7 +6571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2766083183288394750}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6602,7 +6602,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2971605956799672703}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ball_on_a_club2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6635,7 +6635,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8152935734924317860}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: toga_mid_back2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6667,7 +6667,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8472204510637889819}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: toga_mid_back1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6699,7 +6699,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3688268952457861495}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6731,7 +6731,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2341352440025993788}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6763,7 +6763,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1372145865378950594}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6795,7 +6795,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9083516248895285362}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6827,7 +6827,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 854135792226182829}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6859,7 +6859,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2535661765762885738}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6896,7 +6896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6087253173406932149}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: heel_flap_right1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6928,7 +6928,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 650886412186436566}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: bag_front2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6959,7 +6959,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5182975428161582292}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandIndexEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6990,7 +6990,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3550933132013380446}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7021,7 +7021,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2818063885492524319}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandRingEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7052,7 +7052,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8907394058960710477}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7084,7 +7084,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4177014062573108487}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: toga_right_front1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7116,7 +7116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7217363584362496345}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandPinkyEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7147,7 +7147,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 901790760333760374}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7179,7 +7179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6137739979082067786}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Reference
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7211,7 +7211,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6230241235443892348}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7243,7 +7243,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9019825056757928461}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightKneeEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7275,7 +7275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5039770294571399603}
   - component: {fileID: 6537244728343631926}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: body2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7484,7 +7484,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 594033284725475327}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7518,7 +7518,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6493562086987389608}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7550,7 +7550,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6849272371285997610}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: toga_right_back2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7582,7 +7582,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2973857408226543362}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7614,7 +7614,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 317651741073370256}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7646,7 +7646,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6424927275957893413}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: chain8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7678,7 +7678,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1333622457857127237}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7710,7 +7710,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3836895148789146201}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_Reference
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7770,7 +7770,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6581443471814154893}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7803,7 +7803,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8579761904252362592}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7835,7 +7835,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8143824265997393938}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightShoulderEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7866,7 +7866,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3720171734541620612}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: chain2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7898,7 +7898,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6538830967287648375}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftShoulderEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7929,7 +7929,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7959609413097163952}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: knee_pad_left1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7961,7 +7961,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5716619969784718814}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: heel_flap_left1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7994,7 +7994,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1601659092275892469}
   - component: {fileID: 1207881791184845166}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: body5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8203,7 +8203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 22848048746294006}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8234,7 +8234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3908095740471173773}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: toga_left_back2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8266,7 +8266,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5412448409416902447}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_rightArm_shoulder2_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8297,7 +8297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 509225664754677684}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftArm_shoulder1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8329,7 +8329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1348423336633692372}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8361,7 +8361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5244978477482543638}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8393,7 +8393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1713931304118427890}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: flap_under_the_knee_right1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8425,7 +8425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3336781148737506685}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8458,7 +8458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6277909871278657463}
   - component: {fileID: 2262894670876366140}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: weapon5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8667,7 +8667,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6774195796941650588}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8700,7 +8700,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1694621258973747248}
   - component: {fileID: 4038651275112532490}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: weapon4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8909,7 +8909,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 761726984012122700}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8941,7 +8941,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6966222842165903701}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8973,7 +8973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7600397989415126080}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandPinkyEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9004,7 +9004,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5808227143911353775}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9036,7 +9036,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6235737790643856476}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_HeadEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9067,7 +9067,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8397930177954623853}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: toga_left_front1_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9098,7 +9098,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4997099473325259955}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9129,7 +9129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3629700735653577705}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHipEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9160,7 +9160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3525009661739271863}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9197,7 +9197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6473696724574718412}
   - component: {fileID: 2589010649617570310}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: body13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9406,7 +9406,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5646149584597183171}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHipEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9437,7 +9437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3738516636805018506}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9469,7 +9469,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3738989078750653752}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: stick_of_a_club1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9501,7 +9501,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2588132300011481767}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: bag_back1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9534,7 +9534,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7476155548224043283}
   - component: {fileID: 676911117506510314}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: body4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9743,7 +9743,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2121021780237720463}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9775,7 +9775,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6928663995300585223}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9807,7 +9807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4368453871274488192}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9841,7 +9841,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4005933708658692504}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9872,7 +9872,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 749516602421329171}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9904,7 +9904,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4549492355940027350}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9936,7 +9936,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7596639541295521656}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9967,7 +9967,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1710406941442856177}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9998,7 +9998,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3184562518777405488}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10030,7 +10030,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8341518032844818244}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: toga_right_front3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10061,7 +10061,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3325007452383174511}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: toga_right_front2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10094,7 +10094,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9011618380598795433}
   - component: {fileID: 4031644836262948571}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: body15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10303,7 +10303,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4328230816844923729}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10335,7 +10335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5114733607534378473}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10366,7 +10366,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5866157473614094464}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: knee_pad_right1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10398,7 +10398,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7782826071018513532}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10429,7 +10429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6591430464182046198}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10461,7 +10461,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2255590486960386726}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10493,7 +10493,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5733331838652182892}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10525,7 +10525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1986354239437830942}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10557,7 +10557,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 432808721911690947}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: chain6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10589,7 +10589,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5366266610229505494}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: chain1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10621,7 +10621,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8459900661663716465}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10653,7 +10653,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4981863053771805668}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10685,7 +10685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8090385053435634795}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: chain9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10717,7 +10717,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 463935550228391486}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10749,7 +10749,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 407835820571486400}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: chain3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10781,7 +10781,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9128006010049804668}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_ChestEndEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10812,7 +10812,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2328990977169699107}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: toga_mid_front3_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10846,9 +10846,9 @@ GameObject:
   - component: {fileID: 8850744594493337903}
   - component: {fileID: 3845750834877516496}
   - component: {fileID: 7545809390035073731}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Iron_Mace
-  m_TagString: Untagged
+  m_TagString: EnemyWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10888,7 +10888,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -10917,7 +10917,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3792823256750260070}
   - component: {fileID: 1803230032726340814}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: body 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11126,7 +11126,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3085439895576475269}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftArm_shoulder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11157,7 +11157,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6318437144234027474}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: knee_pad_left1_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11188,7 +11188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5703143177809519978}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11219,7 +11219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5477961363213335061}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ball_on_a_club1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11255,7 +11255,7 @@ GameObject:
   - component: {fileID: 3622355930999109703}
   - component: {fileID: 1122402594281350421}
   - component: {fileID: 2997694249861117233}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -11317,11 +11317,11 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.28
+  m_Radius: 0.56
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
@@ -11338,6 +11338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseSpeed: 2
+  hp: 100
   sightAngle: 90
 --- !u!195 &2997694249861117233
 NavMeshAgent:
@@ -11370,7 +11371,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7926350731568728595}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11402,7 +11403,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3861403774824604197}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11435,7 +11436,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1855969055012408664}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11468,7 +11469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6066310001536521741}
   - component: {fileID: 4038145838853198723}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: body11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11677,7 +11678,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6356168383433789276}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11708,7 +11709,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5417216021716603209}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11742,7 +11743,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6404539648945957496}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: hip_flap_right2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11773,7 +11774,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4875851617934189468}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftWristEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11804,7 +11805,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7440944585232354842}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11836,7 +11837,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3847533868183757396}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11868,7 +11869,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1968598448730237789}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11900,7 +11901,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1364216305124406943}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: toga_right_back3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11931,7 +11932,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5556632039257966699}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_RightHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11962,7 +11963,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5709527514225340025}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11993,7 +11994,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3350077305951979881}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12025,7 +12026,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6971767349849216311}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12075,7 +12076,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4672005714949132890}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12107,7 +12108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4374975743301562209}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: bag_back2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12138,7 +12139,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6104713745188993916}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: bag_right1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12171,7 +12172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3965621697230534752}
   - component: {fileID: 6610526821412920588}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: body18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12380,7 +12381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1063057969945502100}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12412,7 +12413,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7420438552190387749}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_LeftHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12445,7 +12446,7 @@ GameObject:
   m_Component:
   - component: {fileID: 703988591278458452}
   - component: {fileID: 4100802209614368132}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: body12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12654,7 +12655,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3156493331224761113}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crusader_tank_Ctrl_RightHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

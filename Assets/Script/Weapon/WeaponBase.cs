@@ -11,6 +11,7 @@ public class WeaponBase : MonoBehaviour
         IDamage damage = other.GetComponent<IDamage>();
         if (damage != null)
         {
+
             if ((gameObject.CompareTag("PlayerSword") && other.CompareTag("Enemy")) ||
                 (gameObject.CompareTag("EnemyWeapon") && other.CompareTag("Player")))
             {
