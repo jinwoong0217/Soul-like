@@ -2,38 +2,55 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour , IDamage
+public class Player : MonoBehaviour, IDamage
 {
-    public float hp = 100f;
+    float hp = 100f;
+    public float HP
+    {
+        get => hp;
+        set
+        {
+            hp = value;
+            if (hp <= 0)
+            {
+                Die();
+            }
+        }
+    }
+
     bool isInvincible = false;
     float invincibilityDuration = 1.0f; // 무적 시간
+    Coroutine damageCoroutine;
 
     public void TakeDamage(float amount)
     {
         if (isInvincible) return;
 
-        StartCoroutine(HandleDamage(amount));
+        if (damageCoroutine != null)
+        {
+            StopCoroutine(damageCoroutine);
+        }
+
+        damageCoroutine = StartCoroutine(HandleDamage(amount));
     }
 
     private IEnumerator HandleDamage(float amount)
     {
         isInvincible = true;
-        hp -= amount;
-        Debug.Log($"Player HP -{hp}");
-
-        if (hp <= 0)
-        {
-            Die();
-        }
+        HP -= amount;
+        Debug.Log($"Player HP: {HP}");
 
         // 무적 시간 동안 대기
         yield return new WaitForSeconds(invincibilityDuration);
         isInvincible = false;
+        damageCoroutine = null;
     }
 
     private void Die()
     {
         // 플레이어 사망 처리
+        Debug.Log("Player Died");
     }
-
 }
+
+

@@ -15,7 +15,7 @@ public class ParrySystem : MonoBehaviour
     readonly int ParryTrue_Hash = Animator.StringToHash("ParryTrue");
     readonly int ParryFalse_Hash = Animator.StringToHash("ParryFalse");
 
-    private void Awake()
+    private void Start()
     {
         player = GameManager.Instance.Player;
         animator = GetComponent<Animator>();
@@ -39,8 +39,14 @@ public class ParrySystem : MonoBehaviour
 
     public void StopParry(bool successful)
     {
+        if (!isParrying) return; // 이미 패링이 종료된 경우 중복 호출 방지
         isParrying = false;
-        playerInput.canMove = true; 
+        playerInput.canMove = true;
+        if (parryCoroutine != null)
+        {
+            StopCoroutine(parryCoroutine);
+            parryCoroutine = null;
+        }
         if (successful)
         {
             animator.SetTrigger(ParryTrue_Hash);
@@ -67,10 +73,11 @@ public class ParrySystem : MonoBehaviour
         }
     }
 
-    public bool HandleEnemyAttack(float damage)
+    public bool IsEnemyAttack(float damage)
     {
         if (isParrying)
         {
+            Debug.Log("Parry success");
             StopParry(true);
             return true;
         }
@@ -80,6 +87,4 @@ public class ParrySystem : MonoBehaviour
             return false;
         }
     }
-
 }
-

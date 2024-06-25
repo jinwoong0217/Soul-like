@@ -42,6 +42,8 @@ public class Enemy : MonoBehaviour , IDamage
     bool isInvincible = false;
     float invincibilityDuration = 1.0f; // 무적 시간
 
+    Enemy_IronMace weapon;
+
     // 적 상태
     enum EnemyState
     {
@@ -95,6 +97,7 @@ public class Enemy : MonoBehaviour , IDamage
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        weapon = FindAnyObjectByType<Enemy_IronMace>();
         target = GameManager.Instance.Player;
         HP = maxHp;
 
@@ -240,11 +243,16 @@ public class Enemy : MonoBehaviour , IDamage
 
     private void CheckParry()
     {
-        bool parrySuccess = GameManager.Instance.Player.GetComponent<ParrySystem>().HandleEnemyAttack(attackDamage);
-        if (parrySuccess)
+        bool playerparrySuccess = target.GetComponent<ParrySystem>().IsEnemyAttack(weapon.damaged);
+        if (playerparrySuccess)
         {
             animator.SetTrigger("GetParry");
+            animator.SetBool(OnSkill_Hash, false);
+            agent.isStopped = false;
+            State = EnemyState.Find;
         }
+       
     }
+
 }
 

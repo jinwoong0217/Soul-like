@@ -4,5 +4,4 @@ using UnityEngine;
 
 public class Enemy_IronMace : WeaponBase
 {
-
 }
