@@ -7,11 +7,11 @@ using System;
 public class Enemy : MonoBehaviour , IDamage
 {
     // 애니메이터 해시 값
-    readonly int SkillTree = Animator.StringToHash("SkillTree"); 
-    readonly int OnSkill_Hash = Animator.StringToHash("OnSkill");
-    readonly int See_Hash = Animator.StringToHash("See");
-    readonly int Chase_Hash = Animator.StringToHash("Chase"); 
-    readonly int ReadyAttack_Hash = Animator.StringToHash("ReadyAttack");
+    readonly int SkillTree = Animator.StringToHash("SkillTree"); // 블렌드 트리 Float
+    readonly int OnSkill_Hash = Animator.StringToHash("OnSkill"); // 스킬을 쓸 수 있는 트랜지션Bool
+    readonly int See_Hash = Animator.StringToHash("See");  // 플레이어를 찾고 플레이어한테 걸어가는 Trigger 트랜지션
+    readonly int Chase_Hash = Animator.StringToHash("Chase");  // 플레이어와 일정 거리 닿는 순간 배틀포즈 애니메이이션으로 바뀌는 Trigger트랜지션
+    readonly int ReadyAttack_Hash = Animator.StringToHash("ReadyAttack");  // 배틀포즈에서 플레이어와 싸울 준비하는 Trigger트랜지션
 
     // 이동 속도
     public float chaseSpeed = 5.0f;
@@ -23,14 +23,18 @@ public class Enemy : MonoBehaviour , IDamage
     // 시야 설정
     public float sightAngle = 90.0f;
 
+
+    float attackDamage = 3;
+
+
     // 컴포넌트
     Animator animator;
     NavMeshAgent agent;
 
     // 이벤트 및 콜백
-    Action<Enemy> onDie;
+    public Action<Enemy> onDie;
     Action onUpdate;
-    Action onAttack;  // 적이 스킬을 쓴다는 걸 알리는 델리게이트(플레이어와의 패링)
+    public Action onAttack;  // 적이 스킬을 쓴다는 걸 알리는 델리게이트(플레이어와의 패링)
 
     // 타겟
     Player target;
@@ -247,6 +251,8 @@ public class Enemy : MonoBehaviour , IDamage
             agent.isStopped = false;
             State = EnemyState.Find;
         }
+       
     }
+
 }
 
