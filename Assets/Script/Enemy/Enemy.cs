@@ -169,7 +169,7 @@ public class Enemy : MonoBehaviour , IDamage
             {
                 // OnSkill_Hash가 false에서 true로 변경될 때만 SkillTree 값을 설정
                 animator.SetBool(OnSkill_Hash, true);
-                animator.SetFloat(SkillTree, UnityEngine.Random.Range(0, 4));
+                animator.SetFloat(SkillTree, UnityEngine.Random.Range(0, 3));
                 onAttack.Invoke();
             }
             agent.isStopped = true;
