@@ -11,13 +11,14 @@ public class PlayerInput : MonoBehaviour
     public float speed = 5.0f;
     public float sprintSpeed = 8.0f;
     float defaultSpeed;  // 이동속도 저장용
+    float minDistance = 2f;
 
     bool isSprinting = false;
     public bool canMove = true;
 
     Vector3 dir = Vector3.zero;
 
-    Player player;
+    Enemy target;
     ParrySystem parrySystem;
     Animator animator;
     PlayerInputActions playerInputActions;
@@ -31,7 +32,7 @@ public class PlayerInput : MonoBehaviour
     {
         defaultSpeed = speed;
 
-        player = GameManager.Instance.Player;
+        target = GameManager.Instance.Enemy;
         animator = GetComponent<Animator>();
         parrySystem = GetComponent<ParrySystem>();
         playerInputActions = new PlayerInputActions();
@@ -69,6 +70,28 @@ public class PlayerInput : MonoBehaviour
         if (canMove)
         {
             Vector3 move = transform.TransformDirection(dir);
+
+            // 적과의 거리 계산
+            if (target != null)
+            {
+                float distanceSqr = (transform.position - target.transform.position).sqrMagnitude;
+                if (distanceSqr < minDistance * minDistance)
+                {
+                    // 최소 거리 이내라면 앞으로의 이동만 제한
+                    move = new Vector3(move.x, move.y, 0f);
+                }
+                else
+                {
+                    // 최소 거리 이상이라면 모든 방향으로 이동 가능
+                    move = transform.TransformDirection(dir);
+                }
+            }
+            else
+            {
+                // 타겟이 없다면 모든 방향으로 이동 가능
+                move = transform.TransformDirection(dir);
+            }
+
             characterController.Move(Time.deltaTime * move * speed);
         }
     }

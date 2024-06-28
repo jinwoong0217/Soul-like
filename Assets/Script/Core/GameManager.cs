@@ -31,10 +31,24 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    Enemy enemy;
+    public Enemy Enemy
+    {
+        get
+        {
+            if(enemy == null)
+            {
+                OnInitialize();
+            }
+            return enemy;
+        }
+    }
+
     protected override void OnInitialize()
     {
         base.OnInitialize();
         player = FindAnyObjectByType<Player>();
+        enemy = FindAnyObjectByType<Enemy>();
         virtualCamera = FindAnyObjectByType<CinemachineVirtualCamera>();
     }
 }

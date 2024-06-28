@@ -7,11 +7,11 @@ using System;
 public class Enemy : MonoBehaviour , IDamage
 {
     // 애니메이터 해시 값
-    readonly int SkillTree = Animator.StringToHash("SkillTree"); // 블렌드 트리 Float
-    readonly int OnSkill_Hash = Animator.StringToHash("OnSkill"); // 스킬을 쓸 수 있는 트랜지션Bool
-    readonly int See_Hash = Animator.StringToHash("See");  // 플레이어를 찾고 플레이어한테 걸어가는 Trigger 트랜지션
-    readonly int Chase_Hash = Animator.StringToHash("Chase");  // 플레이어와 일정 거리 닿는 순간 배틀포즈 애니메이이션으로 바뀌는 Trigger트랜지션
-    readonly int ReadyAttack_Hash = Animator.StringToHash("ReadyAttack");  // 배틀포즈에서 플레이어와 싸울 준비하는 Trigger트랜지션
+    readonly int SkillTree = Animator.StringToHash("SkillTree"); 
+    readonly int OnSkill_Hash = Animator.StringToHash("OnSkill"); 
+    readonly int See_Hash = Animator.StringToHash("See"); 
+    readonly int Chase_Hash = Animator.StringToHash("Chase"); 
+    readonly int ReadyAttack_Hash = Animator.StringToHash("ReadyAttack");  
 
     // 이동 속도
     public float chaseSpeed = 5.0f;
@@ -23,10 +23,6 @@ public class Enemy : MonoBehaviour , IDamage
     // 시야 설정
     public float sightAngle = 90.0f;
 
-
-    float attackDamage = 3;
-
-
     // 컴포넌트
     Animator animator;
     NavMeshAgent agent;
@@ -34,7 +30,6 @@ public class Enemy : MonoBehaviour , IDamage
     // 이벤트 및 콜백
     public Action<Enemy> onDie;
     Action onUpdate;
-    public Action onAttack;  // 적이 스킬을 쓴다는 걸 알리는 델리게이트(플레이어와의 패링)
 
     // 타겟
     Player target;
@@ -102,7 +97,6 @@ public class Enemy : MonoBehaviour , IDamage
         HP = maxHp;
 
         onUpdate = UpdateIdle;
-        onAttack += CheckParry;
     }
 
     private void FixedUpdate()
@@ -170,7 +164,6 @@ public class Enemy : MonoBehaviour , IDamage
                 // OnSkill_Hash가 false에서 true로 변경될 때만 SkillTree 값을 설정
                 animator.SetBool(OnSkill_Hash, true);
                 animator.SetFloat(SkillTree, UnityEngine.Random.Range(0, 3));
-                onAttack.Invoke();
             }
             agent.isStopped = true;
         }
@@ -213,6 +206,10 @@ public class Enemy : MonoBehaviour , IDamage
         gameObject.SetActive(false);
     }
 
+    /// <summary>
+    /// 인터페이스를 이용한 함수
+    /// </summary>
+    /// <param name="amount">데미지</param>
     public void TakeDamage(float amount)
     {
         if (isInvincible) return;
@@ -220,11 +217,15 @@ public class Enemy : MonoBehaviour , IDamage
         StartCoroutine(HandleDamage(amount));
     }
 
+    /// <summary>
+    /// 적이 데미지를 받는 코루틴(연속된 데미지 방지)
+    /// </summary>
+    /// <param name="amount">데미지</param>
+    /// <returns></returns>
     private IEnumerator HandleDamage(float amount)
     {
         isInvincible = true;
         HP -= amount;
-        Debug.Log($"Enemy HP {HP}");
 
         if (HP <= 0)
         {
@@ -241,6 +242,9 @@ public class Enemy : MonoBehaviour , IDamage
         State = EnemyState.Dead;
     }
 
+    /// <summary>
+    /// 플레이어의 패링을 체크하는 함수( 애니메이터 이벤트함수 )
+    /// </summary>
     private void CheckParry()
     {
         bool playerparrySuccess = target.GetComponent<ParrySystem>().IsEnemyAttack(weapon.damaged);
@@ -251,8 +255,5 @@ public class Enemy : MonoBehaviour , IDamage
             agent.isStopped = false;
             State = EnemyState.Find;
         }
-       
     }
-
 }
-

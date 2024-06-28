@@ -8,6 +8,7 @@ TagManager:
   - Shield
   - PlayerSword
   - EnemyWeapon
+  - ground
   layers:
   - Default
   - TransparentFX

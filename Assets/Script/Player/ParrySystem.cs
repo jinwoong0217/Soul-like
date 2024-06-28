@@ -22,6 +22,9 @@ public class ParrySystem : MonoBehaviour
         playerInput = player.GetComponent<PlayerInput>();
     }
 
+    /// <summary>
+    /// 패링을 시작하고나서 적용되는 함수
+    /// </summary>
     public void StartParry()
     {
         if (!isParrying)
@@ -37,6 +40,10 @@ public class ParrySystem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 패링이 끝나거나 패링이 실패할때의 함수
+    /// </summary>
+    /// <param name="successful">패링 성공 여부</param>
     public void StopParry(bool successful)
     {
         if (!isParrying) return; // 이미 패링이 종료된 경우 중복 호출 방지
@@ -57,6 +64,10 @@ public class ParrySystem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 패링 유지 시간 코루틴
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator ParryCoroutine()
     {
         float startTime = Time.time;
@@ -73,11 +84,15 @@ public class ParrySystem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 외부에서 적의 공격을 체크하는 함수
+    /// </summary>
+    /// <param name="damage">적의 데미지</param>
+    /// <returns></returns>
     public bool IsEnemyAttack(float damage)
     {
         if (isParrying)
         {
-            Debug.Log("Parry success");
             StopParry(true);
             return true;
         }
