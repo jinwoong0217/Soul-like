@@ -56,7 +56,6 @@ public class Player : MonoBehaviour, IDamage
     {
         isInvincible = true;
         HP -= amount;
-        Debug.Log($"player{HP}");
 
         if (HP <= 0)
         {

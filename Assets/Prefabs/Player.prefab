@@ -256,7 +256,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damaged: 5
-  minDistance: 1
 --- !u!1 &928327173823706839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1884,7 +1883,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.25
-  m_Height: 1.5
+  m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &4525948307423174023
@@ -1914,7 +1913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8941772e488bf7c4ba288e18e13ac478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInvincible: 0
+  hp: 100
 --- !u!114 &2987598916918211822
 MonoBehaviour:
   m_ObjectHideFlags: 0
