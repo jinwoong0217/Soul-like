@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour , IDamage
 
     // 체력
     public float hp = 100.0f;
-    float maxHp = 100.0f;
+    public float maxHp = 100.0f;
 
     // 시야 설정
     public float sightAngle = 90.0f;
@@ -26,6 +26,8 @@ public class Enemy : MonoBehaviour , IDamage
     // 컴포넌트
     Animator animator;
     NavMeshAgent agent;
+    Enemy_IronMace weapon;
+    EnemyHP enemyHP;
 
     // 이벤트 및 콜백
     public Action<Enemy> onDie;
@@ -37,7 +39,6 @@ public class Enemy : MonoBehaviour , IDamage
     bool isInvincible = false;
     float invincibilityDuration = 1.0f; // 무적 시간
 
-    Enemy_IronMace weapon;
 
     // 적 상태
     enum EnemyState
@@ -60,6 +61,7 @@ public class Enemy : MonoBehaviour , IDamage
             {
                 State = EnemyState.Dead;
             }
+            enemyHP.UpdateHPUI();
         }
     }
 
@@ -93,6 +95,7 @@ public class Enemy : MonoBehaviour , IDamage
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         weapon = FindAnyObjectByType<Enemy_IronMace>();
+        enemyHP = FindAnyObjectByType<EnemyHP>();
         target = GameManager.Instance.Player;
         HP = maxHp;
 
@@ -226,6 +229,7 @@ public class Enemy : MonoBehaviour , IDamage
     {
         isInvincible = true;
         HP -= amount;
+        Debug.Log($"enemy{HP}");
 
         if (HP <= 0)
         {
