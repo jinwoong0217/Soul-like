@@ -23,16 +23,20 @@ public class Player : MonoBehaviour, IDamage
 
 
     public Action OnHealthChanged;  // 플레이어의 체력감소 델리게이트
+    public Action OnDie;  // 플레이어가 죽었음을 알리는 델리게이트
     public bool isInvincible = false;  // 무적 체크
     float invincibilityDuration = 3.0f; // 무적 시간
 
+    Animator animator;
     ParrySystem parrySystem;
+
+    readonly int Death_Hash = Animator.StringToHash("Death");
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         parrySystem = GetComponent<ParrySystem>();
         HP = maxHP;
-        
     }
 
     public void TakeDamage(float amount)
@@ -59,7 +63,7 @@ public class Player : MonoBehaviour, IDamage
     /// </summary>
     /// <param name="amount">데미지 계수</param>
     /// <returns></returns>
-    private IEnumerator HandleDamage(float amount)
+    IEnumerator HandleDamage(float amount)
     {
         isInvincible = true;
         HP -= amount;
@@ -78,16 +82,17 @@ public class Player : MonoBehaviour, IDamage
     /// 플레이어 무적 코루틴
     /// </summary>
     /// <returns></returns>
-    private IEnumerator HandleInvincibility()
+    IEnumerator HandleInvincibility()
     {
         isInvincible = true;
         yield return new WaitForSeconds(invincibilityDuration);
         isInvincible = false;
     }
 
-    private void Die()
+    void Die()
     {
-        // 플레이어 사망 처리 로직
-        Debug.Log("");
+        animator.SetTrigger(Death_Hash);
+        OnDie?.Invoke();
+        Time.timeScale = 0;
     }
 }

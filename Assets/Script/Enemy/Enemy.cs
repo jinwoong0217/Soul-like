@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour , IDamage
     readonly int Chase_Hash = Animator.StringToHash("Chase"); 
     readonly int ReadyAttack_Hash = Animator.StringToHash("ReadyAttack");
     readonly int GetParry_Hash = Animator.StringToHash("GetParry");
+    readonly int Death_Hash = Animator.StringToHash("Dead");
 
     // 이동 속도
     public float chaseSpeed = 5.0f;
@@ -238,7 +239,7 @@ public class Enemy : MonoBehaviour , IDamage
     /// </summary>
     /// <param name="amount">데미지</param>
     /// <returns></returns>
-    private IEnumerator HandleDamage(float amount)
+    IEnumerator HandleDamage(float amount)
     {
         isInvincible = true;
         HP -= amount;
@@ -253,8 +254,9 @@ public class Enemy : MonoBehaviour , IDamage
         isInvincible = false;
     }
 
-    private void Die()
+    void Die()
     {
+        animator.SetTrigger(Death_Hash);
         State = EnemyState.Dead;
     }
 
