@@ -1,16 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour, IDamage
 {
-    float hp = 100f;
+    float hp;
+    public float maxHP = 100f;
     public float HP
     {
         get => hp;
         set
         {
             hp = value;
+            OnHealthChanged?.Invoke();
             if (hp <= 0)
             {
                 Die();
@@ -18,6 +21,8 @@ public class Player : MonoBehaviour, IDamage
         }
     }
 
+
+    public Action OnHealthChanged;  // 플레이어의 체력감소 델리게이트
     public bool isInvincible = false;  // 무적 체크
     float invincibilityDuration = 3.0f; // 무적 시간
 
@@ -26,6 +31,8 @@ public class Player : MonoBehaviour, IDamage
     void Start()
     {
         parrySystem = GetComponent<ParrySystem>();
+        HP = maxHP;
+        
     }
 
     public void TakeDamage(float amount)

@@ -18,29 +18,48 @@ public class Enemy : MonoBehaviour , IDamage
     public float chaseSpeed = 5.0f;
 
     // 체력
-    public float hp = 100.0f;
-    float maxHp = 100.0f;
+    float hp = 100.0f;
+    public float maxHP = 100.0f;
+
+    // 체력 프로퍼티
+    public float HP
+    {
+        get => hp;
+        set
+        {
+            hp = value;
+            OnHealthChanged?.Invoke();
+            if (hp <= 0)
+            {
+                State = EnemyState.Dead;
+            }
+        }
+    }
 
     // 시야 설정
     public float sightAngle = 90.0f;
     float defaultAngle;
     float findAngle = 360f;
+    float sightRange = 20f;
 
     // 컴포넌트
     Animator animator;
     NavMeshAgent agent;
-
-    // 이벤트 및 콜백
-    public Action<Enemy> onDie;
-    Action onUpdate;
+    Enemy_IronMace weapon;
+    EnemyHP enemyHP;
 
     // 타겟
     Player target;
 
+    // 이벤트 및 콜백
+    public Action<Enemy> onDie;
+    public Action OnHealthChanged;
+    Action onUpdate;
+
+
     bool isInvincible = false;
     float invincibilityDuration = 1.0f; // 무적 시간
 
-    Enemy_IronMace weapon;
 
     // 적 상태
     enum EnemyState
@@ -51,20 +70,6 @@ public class Enemy : MonoBehaviour , IDamage
         Dead
     }
     EnemyState state = EnemyState.Idle;
-
-    // 체력 프로퍼티
-    public float HP
-    {
-        get => hp;
-        set
-        {
-            hp = value;
-            if (hp <= 0)
-            {
-                State = EnemyState.Dead;
-            }
-        }
-    }
 
     // 상태 프로퍼티
     EnemyState State
@@ -96,9 +101,12 @@ public class Enemy : MonoBehaviour , IDamage
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         weapon = FindAnyObjectByType<Enemy_IronMace>();
+        enemyHP = FindAnyObjectByType<EnemyHP>();
         target = GameManager.Instance.Player;
-        HP = maxHp;
+
+        HP = maxHP;
         defaultAngle = sightAngle;
+        enemyHP.gameObject.SetActive(false);
 
         onUpdate = UpdateIdle;
     }
@@ -120,13 +128,14 @@ public class Enemy : MonoBehaviour , IDamage
     /// <summary>
     /// 타겟을 찾는 함수
     /// </summary>
-    /// <returns>시야각에 들어오면 true 아니면 false</returns>
+    /// <returns>시야각에 들어오고 sightRange 내부에 있으면 true 아니면 false</returns>
     bool FindPlayer()
     {
         Vector3 findPlayer = (target.transform.position - transform.position).normalized;
         float insightPlayer = Vector3.Angle(transform.forward, findPlayer);
+        float sqrDistance = (target.transform.position - transform.position).sqrMagnitude;
 
-        if(insightPlayer < sightAngle)
+        if (insightPlayer < sightAngle && sqrDistance <= sightRange * sightRange)
         {
             return true;
         }
@@ -136,12 +145,13 @@ public class Enemy : MonoBehaviour , IDamage
     // Find상태 업데이트
     void UpdateFind()
     {
-       if(FindPlayer())
+        if (FindPlayer())
         {
+            enemyHP.gameObject.SetActive(true);
             animator.SetTrigger(See_Hash);
             agent.SetDestination(target.transform.position);
             agent.speed = chaseSpeed;
-            if(Vector3.SqrMagnitude(target.transform.position - transform.position) <= 5f * 5f)
+            if ((target.transform.position - transform.position).sqrMagnitude <= sightRange * sightRange)
             {
                 animator.SetTrigger(Chase_Hash);
                 sightAngle = findAngle;
