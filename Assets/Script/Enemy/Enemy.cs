@@ -11,7 +11,8 @@ public class Enemy : MonoBehaviour , IDamage
     readonly int OnSkill_Hash = Animator.StringToHash("OnSkill"); 
     readonly int See_Hash = Animator.StringToHash("See"); 
     readonly int Chase_Hash = Animator.StringToHash("Chase"); 
-    readonly int ReadyAttack_Hash = Animator.StringToHash("ReadyAttack");  
+    readonly int ReadyAttack_Hash = Animator.StringToHash("ReadyAttack");
+    readonly int GetParry_Hash = Animator.StringToHash("GetParry");
 
     // 이동 속도
     public float chaseSpeed = 5.0f;
@@ -22,6 +23,8 @@ public class Enemy : MonoBehaviour , IDamage
 
     // 시야 설정
     public float sightAngle = 90.0f;
+    float defaultAngle;
+    float findAngle = 360f;
 
     // 컴포넌트
     Animator animator;
@@ -95,6 +98,7 @@ public class Enemy : MonoBehaviour , IDamage
         weapon = FindAnyObjectByType<Enemy_IronMace>();
         target = GameManager.Instance.Player;
         HP = maxHp;
+        defaultAngle = sightAngle;
 
         onUpdate = UpdateIdle;
     }
@@ -140,11 +144,13 @@ public class Enemy : MonoBehaviour , IDamage
             if(Vector3.SqrMagnitude(target.transform.position - transform.position) <= 5f * 5f)
             {
                 animator.SetTrigger(Chase_Hash);
+                sightAngle = findAngle;
                 State = EnemyState.Fight;
             }
         }
         else
         {
+            sightAngle = defaultAngle;
             State = EnemyState.Idle;
         }
     }
@@ -226,7 +232,7 @@ public class Enemy : MonoBehaviour , IDamage
     {
         isInvincible = true;
         HP -= amount;
-
+        Debug.Log($"Enemy : {HP}");
         if (HP <= 0)
         {
             Die();
@@ -250,7 +256,7 @@ public class Enemy : MonoBehaviour , IDamage
         bool playerparrySuccess = target.GetComponent<ParrySystem>().IsEnemyAttack(weapon.damaged);
         if (playerparrySuccess)
         {
-            animator.SetTrigger("GetParry");
+            animator.SetTrigger(GetParry_Hash);
             animator.SetBool(OnSkill_Hash, false);
             agent.isStopped = false;
             State = EnemyState.Find;

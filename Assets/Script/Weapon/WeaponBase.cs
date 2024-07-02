@@ -12,16 +12,13 @@ public class WeaponBase : MonoBehaviour
         IDamage damage = other.GetComponent<IDamage>();
         if (damage != null)
         {
-            float distanceSqr = (transform.position - other.transform.position).sqrMagnitude;
-            if (distanceSqr <= minDistance)
+            if ((gameObject.CompareTag("PlayerSword") && other.CompareTag("Enemy")) ||
+                (gameObject.CompareTag("EnemyWeapon") && other.CompareTag("Player")))
             {
-                if ((gameObject.CompareTag("PlayerSword") && other.CompareTag("Enemy")) ||
-                    (gameObject.CompareTag("EnemyWeapon") && other.CompareTag("Player")))
+                Player player = GameManager.Instance.Player;
+                if (!player.isInvincible)
                 {
-                    if (!other.GetComponent<Player>().isInvincible)
-                    {
-                        damage.TakeDamage(damaged);
-                    }
+                    damage.TakeDamage(damaged);
                 }
             }
         }

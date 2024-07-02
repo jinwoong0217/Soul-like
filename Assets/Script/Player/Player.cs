@@ -56,7 +56,7 @@ public class Player : MonoBehaviour, IDamage
     {
         isInvincible = true;
         HP -= amount;
-
+        Debug.Log($"Player : {HP}");
         if (HP <= 0)
         {
             Die();
