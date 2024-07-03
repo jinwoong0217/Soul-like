@@ -93,6 +93,13 @@ public class Player : MonoBehaviour, IDamage
     {
         animator.SetTrigger(Death_Hash);
         OnDie?.Invoke();
+    }
+
+    /// <summary>
+    /// 이벤트용 함수
+    /// </summary>
+    void OnDead()
+    {
         Time.timeScale = 0;
     }
 }

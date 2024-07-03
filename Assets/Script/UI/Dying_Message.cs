@@ -14,20 +14,19 @@ public class Dying_Message : MonoBehaviour
         player = GameManager.Instance.Player;
         dyingText = GetComponentInChildren<TextMeshProUGUI>();
 
-        //gameObject.SetActive(false);
+        gameObject.SetActive(false);
         player.OnDie += OnPlayerDead;
     }
 
     void OnPlayerDead()
     {
-        dyingText.gameObject.SetActive(true);
+        gameObject.SetActive(true);
         StartCoroutine(FadeInText());
     }
 
     IEnumerator FadeInText()
     {
-        
-        dyingText.color = new Color(dyingText.color.r, dyingText.color.g, dyingText.color.b, 0f); 
+        dyingText.color = new Color(dyingText.color.r, dyingText.color.g, dyingText.color.b, 0f);
 
         float elapsedTime = 0f;
         while (elapsedTime < FadeInColor)
@@ -40,4 +39,6 @@ public class Dying_Message : MonoBehaviour
 
         dyingText.color = new Color(dyingText.color.r, dyingText.color.g, dyingText.color.b, 1f);
     }
+
+
 }

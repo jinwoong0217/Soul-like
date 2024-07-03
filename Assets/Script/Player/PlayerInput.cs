@@ -19,6 +19,7 @@ public class PlayerInput : MonoBehaviour
     Vector3 dir = Vector3.zero;
 
     Enemy target;
+    Player player;
     ParrySystem parrySystem;
     Animator animator;
     PlayerInputActions playerInputActions;
@@ -32,6 +33,7 @@ public class PlayerInput : MonoBehaviour
     {
         defaultSpeed = speed;
 
+        player = GameManager.Instance.Player;
         target = GameManager.Instance.Enemy;
         animator = GetComponent<Animator>();
         parrySystem = GetComponent<ParrySystem>();
@@ -39,6 +41,8 @@ public class PlayerInput : MonoBehaviour
         characterController = GetComponent<CharacterController>();
 
         Cursor.lockState = CursorLockMode.Locked;
+
+        player.OnDie += OnDisable;  // 플레이어의 OnDie에 이벤트 추가
     }
 
     private void OnEnable()
